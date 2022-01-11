@@ -40,7 +40,7 @@ std::string Library::toString() const {
     std::ostringstream output;
     output << "Books, Organized By Author" << std::endl;
     output << printMap(booksByAuthor) << std::endl;
-    output << "Books, Organized By Genre" << std::endl;
+    output << "Books, Organized By Genre" << std::endl; //bug begins here so likely an issue with booksByGenre
     output << printMap(booksByGenre) << std::endl;
     return output.str();
 }
@@ -74,6 +74,9 @@ void Library::organizeBooksByGenre() {
         else {
             std::vector<Book*> bookList = it->second;
             bookList.push_back(book);
+            //it->second.push_back(book);
+            it->second = bookList; //added this. Not sure what it does. Made no change.
         }
     }
 }
+
