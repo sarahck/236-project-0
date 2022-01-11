@@ -74,8 +74,7 @@ void Library::organizeBooksByGenre() {
         else {
             std::vector<Book*> bookList = it->second;
             bookList.push_back(book);
-            //it->second.push_back(book);
-            it->second = bookList; //added this. Not sure what it does. Made no change.
+            it->second = bookList; //added this. This was in organizeBookList
         }
     }
 }
